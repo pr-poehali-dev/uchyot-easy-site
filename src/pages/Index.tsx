@@ -16,34 +16,34 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-      <header className="fixed top-0 left-0 right-0 z-50 bg-slate-50/90 backdrop-blur-sm border-b border-slate-200">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm border-b border-border">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center gap-2">
             <Icon name="FileSpreadsheet" className="text-primary" size={28} />
-            <span className="text-xl font-bold text-slate-900">УЧЁТ ЛЕГКО!</span>
+            <span className="text-xl font-bold text-foreground">УЧЁТ ЛЕГКО!</span>
           </div>
           <nav className="hidden md:flex gap-6">
-            <a href="#process" className="text-sm font-medium text-slate-700 hover:text-primary transition-colors">Как мы работаем</a>
-            <a href="#templates" className="text-sm font-medium text-slate-700 hover:text-primary transition-colors">Шаблоны</a>
-            <a href="#cases" className="text-sm font-medium text-slate-700 hover:text-primary transition-colors">Кейсы</a>
-            <a href="#about" className="text-sm font-medium text-slate-700 hover:text-primary transition-colors">О нас</a>
-            <a href="#contact" className="text-sm font-medium text-slate-700 hover:text-primary transition-colors">Контакты</a>
+            <a href="#process" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Как мы работаем</a>
+            <a href="#templates" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Шаблоны</a>
+            <a href="#cases" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Кейсы</a>
+            <a href="#about" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">О нас</a>
+            <a href="#contact" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Контакты</a>
           </nav>
-          <Button className="bg-primary hover:bg-secondary">Заявка</Button>
+          <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">Заявка</Button>
         </div>
       </header>
 
-      <section className="pt-32 pb-20 bg-slate-50">
+      <section className="pt-32 pb-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
-            <h1 className="text-5xl md:text-7xl font-bold text-slate-900 mb-6 tracking-tight">
+            <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 tracking-tight">
               АВТОМАТИЗАЦИЯ УЧЕТА<br />
               <span className="text-primary">ЛЕГКО!</span>
             </h1>
-            <p className="text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-foreground/70 mb-8 max-w-2xl mx-auto">
               Разрабатываем системы учета в Google-таблицах и автоматизируем отчетность для вашего бизнеса
             </p>
-            <Button size="lg" className="bg-primary hover:bg-secondary text-white px-8 py-6 text-lg">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg">
               Получить консультацию
               <Icon name="ArrowRight" className="ml-2" size={20} />
             </Button>
@@ -51,12 +51,12 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="process" className="py-20 bg-slate-900">
+      <section id="process" className="py-20 bg-[#1e1e1e]">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-4 tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-background text-center mb-4 tracking-tight">
             КАК МЫ РАБОТАЕМ
           </h2>
-          <p className="text-slate-400 text-center mb-16 text-lg">Простой и прозрачный процесс от заявки до результата</p>
+          <p className="text-secondary text-center mb-16 text-lg">Простой и прозрачный процесс от заявки до результата</p>
           
           <div className="max-w-4xl mx-auto grid gap-6">
             {[
@@ -96,13 +96,13 @@ const Index = () => {
                 description: 'Официальное завершение с гарантией исправления ошибок'
               }
             ].map((item, index) => (
-              <Card key={index} className="bg-slate-800 border-slate-700 hover:border-primary transition-all duration-300 animate-slide-in-left" style={{ animationDelay: `${index * 100}ms` }}>
+              <Card key={index} className="bg-[#2d2d2d] border-muted hover:border-primary transition-all duration-300 animate-slide-in-left" style={{ animationDelay: `${index * 100}ms` }}>
                 <CardHeader>
                   <div className="flex items-start gap-4">
                     <span className="text-5xl font-bold text-primary/20">{item.step}</span>
                     <div>
-                      <CardTitle className="text-white text-xl mb-2">{item.title}</CardTitle>
-                      <CardDescription className="text-slate-400">{item.description}</CardDescription>
+                      <CardTitle className="text-background text-xl mb-2">{item.title}</CardTitle>
+                      <CardDescription className="text-secondary">{item.description}</CardDescription>
                     </div>
                   </div>
                 </CardHeader>
@@ -111,10 +111,10 @@ const Index = () => {
           </div>
 
           <div className="mt-16 max-w-4xl mx-auto">
-            <Card className="bg-slate-800 border-primary">
+            <Card className="bg-[#2d2d2d] border-primary">
               <CardHeader>
-                <CardTitle className="text-white text-center">Официальная работа с гарантиями</CardTitle>
-                <CardDescription className="text-slate-400 text-center">
+                <CardTitle className="text-background text-center">Официальная работа с гарантиями</CardTitle>
+                <CardDescription className="text-secondary text-center">
                   Работаем по договору, принимаем любые формы оплаты, гарантируем исправление ошибок
                 </CardDescription>
               </CardHeader>
@@ -123,12 +123,12 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="templates" className="py-20 bg-slate-50">
+      <section id="templates" className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 text-center mb-4 tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground text-center mb-4 tracking-tight">
             ГОТОВЫЕ ШАБЛОНЫ
           </h2>
-          <p className="text-slate-600 text-center mb-16 text-lg">Универсальные решения для управленческого учета</p>
+          <p className="text-foreground/70 text-center mb-16 text-lg">Универсальные решения для управленческого учета</p>
           
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {[
@@ -151,7 +151,7 @@ const Index = () => {
                 price: '18 000 ₽'
               }
             ].map((template, index) => (
-              <Card key={index} className="hover:shadow-xl transition-shadow duration-300 animate-scale-in" style={{ animationDelay: `${index * 150}ms` }}>
+              <Card key={index} className="hover:shadow-xl transition-shadow duration-300 animate-scale-in border-border" style={{ animationDelay: `${index * 150}ms` }}>
                 <CardHeader>
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
                     <Icon name={template.icon as any} className="text-primary" size={24} />
@@ -162,7 +162,7 @@ const Index = () => {
                 <CardContent>
                   <div className="flex items-center justify-between">
                     <span className="text-2xl font-bold text-primary">{template.price}</span>
-                    <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">
+                    <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
                       Купить
                     </Button>
                   </div>
@@ -173,12 +173,12 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="cases" className="py-20 bg-slate-900">
+      <section id="cases" className="py-20 bg-[#1e1e1e]">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-4 tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-background text-center mb-4 tracking-tight">
             НАШИ КЕЙСЫ
           </h2>
-          <p className="text-slate-400 text-center mb-16 text-lg">Реализованные проекты автоматизации</p>
+          <p className="text-secondary text-center mb-16 text-lg">Реализованные проекты автоматизации</p>
           
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {[
@@ -203,10 +203,10 @@ const Index = () => {
                 metrics: ['20+ источников данных', 'Обновление в реальном времени']
               }
             ].map((caseItem, index) => (
-              <Card key={index} className="bg-slate-800 border-slate-700 hover:border-primary transition-colors duration-300">
+              <Card key={index} className="bg-[#2d2d2d] border-muted hover:border-primary transition-colors duration-300">
                 <CardHeader>
-                  <CardTitle className="text-white text-xl mb-3">{caseItem.title}</CardTitle>
-                  <CardDescription className="text-slate-400 mb-4">{caseItem.description}</CardDescription>
+                  <CardTitle className="text-background text-xl mb-3">{caseItem.title}</CardTitle>
+                  <CardDescription className="text-secondary mb-4">{caseItem.description}</CardDescription>
                   <div className="flex flex-wrap gap-2">
                     {caseItem.metrics.map((metric, i) => (
                       <span key={i} className="inline-flex items-center gap-1 text-sm text-primary bg-primary/10 px-3 py-1 rounded-full">
@@ -222,13 +222,13 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="about" className="py-20 bg-slate-50">
+      <section id="about" className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 tracking-tight">
               О НАС
             </h2>
-            <p className="text-lg text-slate-600 mb-8">
+            <p className="text-lg text-foreground/70 mb-8">
               Мы — команда специалистов по автоматизации бизнес-процессов. Наша миссия — делать учет простым и понятным для любого бизнеса.
             </p>
             <div className="grid md:grid-cols-3 gap-8 mt-12">
@@ -239,7 +239,7 @@ const Index = () => {
               ].map((stat, index) => (
                 <div key={index} className="text-center">
                   <div className="text-5xl font-bold text-primary mb-2">{stat.number}</div>
-                  <div className="text-slate-600">{stat.label}</div>
+                  <div className="text-foreground/70">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -247,13 +247,13 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-slate-900">
+      <section className="py-20 bg-[#1e1e1e]">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-4 tracking-tight">
+            <h2 className="text-4xl md:text-5xl font-bold text-background text-center mb-4 tracking-tight">
               ОТЗЫВЫ
             </h2>
-            <p className="text-slate-400 text-center mb-16 text-lg">Что говорят наши клиенты</p>
+            <p className="text-secondary text-center mb-16 text-lg">Что говорят наши клиенты</p>
             
             <div className="grid md:grid-cols-2 gap-6">
               {[
@@ -278,16 +278,16 @@ const Index = () => {
                   text: 'Профессиональный подход на всех этапах. Система учета полностью закрыла наши потребности. Благодарим за качество!'
                 }
               ].map((review, index) => (
-                <Card key={index} className="bg-slate-800 border-slate-700">
+                <Card key={index} className="bg-[#2d2d2d] border-muted">
                   <CardHeader>
                     <div className="flex items-start gap-4">
                       <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-xl">
                         {review.name[0]}
                       </div>
                       <div className="flex-1">
-                        <CardTitle className="text-white text-lg mb-1">{review.name}</CardTitle>
-                        <CardDescription className="text-slate-400 text-sm mb-3">{review.role}</CardDescription>
-                        <p className="text-slate-300">{review.text}</p>
+                        <CardTitle className="text-background text-lg mb-1">{review.name}</CardTitle>
+                        <CardDescription className="text-secondary text-sm mb-3">{review.role}</CardDescription>
+                        <p className="text-background/90">{review.text}</p>
                       </div>
                     </div>
                   </CardHeader>
@@ -298,13 +298,13 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-slate-50">
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 text-center mb-4 tracking-tight">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground text-center mb-4 tracking-tight">
               FAQ
             </h2>
-            <p className="text-slate-600 text-center mb-16 text-lg">Часто задаваемые вопросы</p>
+            <p className="text-foreground/70 text-center mb-16 text-lg">Часто задаваемые вопросы</p>
             
             <Accordion type="single" collapsible className="space-y-4">
               {[
@@ -329,11 +329,11 @@ const Index = () => {
                   answer: 'Принимаем оплату любым удобным способом: на карту, по счету для ИП и ООО, через электронные платежные системы.'
                 }
               ].map((item, index) => (
-                <AccordionItem key={index} value={`item-${index}`} className="border border-slate-200 rounded-lg px-6 bg-white">
-                  <AccordionTrigger className="text-left text-slate-900 font-medium hover:text-primary">
+                <AccordionItem key={index} value={`item-${index}`} className="border border-border rounded-lg px-6 bg-card">
+                  <AccordionTrigger className="text-left text-foreground font-medium hover:text-primary">
                     {item.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-slate-600">
+                  <AccordionContent className="text-foreground/70">
                     {item.answer}
                   </AccordionContent>
                 </AccordionItem>
@@ -343,45 +343,45 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="contact" className="py-20 bg-slate-900">
+      <section id="contact" className="py-20 bg-[#1e1e1e]">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-4 tracking-tight">
+            <h2 className="text-4xl md:text-5xl font-bold text-background text-center mb-4 tracking-tight">
               СВЯЗАТЬСЯ С НАМИ
             </h2>
-            <p className="text-slate-400 text-center mb-12 text-lg">Оставьте заявку и мы свяжемся с вами в течение часа</p>
+            <p className="text-secondary text-center mb-12 text-lg">Оставьте заявку и мы свяжемся с вами в течение часа</p>
             
-            <Card className="bg-slate-800 border-slate-700">
+            <Card className="bg-[#2d2d2d] border-muted">
               <CardContent className="pt-6">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label className="text-white mb-2 block">Ваше имя</label>
+                    <label className="text-background mb-2 block">Ваше имя</label>
                     <Input 
                       placeholder="Иван Иванов"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
+                      className="bg-[#3d3d3d] border-muted text-background placeholder:text-secondary"
                     />
                   </div>
                   <div>
-                    <label className="text-white mb-2 block">Email или телефон</label>
+                    <label className="text-background mb-2 block">Email или телефон</label>
                     <Input 
                       placeholder="ivan@example.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
+                      className="bg-[#3d3d3d] border-muted text-background placeholder:text-secondary"
                     />
                   </div>
                   <div>
-                    <label className="text-white mb-2 block">Ваша задача</label>
+                    <label className="text-background mb-2 block">Ваша задача</label>
                     <Textarea 
                       placeholder="Расскажите о задаче, которую хотите автоматизировать"
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400 min-h-32"
+                      className="bg-[#3d3d3d] border-muted text-background placeholder:text-secondary min-h-32"
                     />
                   </div>
-                  <Button type="submit" className="w-full bg-primary hover:bg-secondary text-white py-6 text-lg">
+                  <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-6 text-lg">
                     Отправить заявку
                     <Icon name="Send" className="ml-2" size={20} />
                   </Button>
@@ -390,11 +390,11 @@ const Index = () => {
             </Card>
 
             <div className="mt-12 flex justify-center gap-6">
-              <a href="tel:+79999999999" className="flex items-center gap-2 text-slate-400 hover:text-primary transition-colors">
+              <a href="tel:+79999999999" className="flex items-center gap-2 text-secondary hover:text-primary transition-colors">
                 <Icon name="Phone" size={20} />
                 <span>+7 (999) 999-99-99</span>
               </a>
-              <a href="mailto:info@uchet-legko.ru" className="flex items-center gap-2 text-slate-400 hover:text-primary transition-colors">
+              <a href="mailto:info@uchet-legko.ru" className="flex items-center gap-2 text-secondary hover:text-primary transition-colors">
                 <Icon name="Mail" size={20} />
                 <span>info@uchet-legko.ru</span>
               </a>
@@ -403,19 +403,19 @@ const Index = () => {
         </div>
       </section>
 
-      <footer className="py-8 bg-slate-950 border-t border-slate-800">
+      <footer className="py-8 bg-[#0d0d0d] border-t border-muted">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-2">
               <Icon name="FileSpreadsheet" className="text-primary" size={24} />
-              <span className="font-bold text-white">УЧЁТ ЛЕГКО!</span>
+              <span className="font-bold text-background">УЧЁТ ЛЕГКО!</span>
             </div>
-            <p className="text-slate-400 text-sm">© 2024 Учёт Легко. Все права защищены.</p>
+            <p className="text-secondary text-sm">© 2024 Учёт Легко. Все права защищены.</p>
             <div className="flex gap-4">
-              <a href="#" className="text-slate-400 hover:text-primary transition-colors">
+              <a href="#" className="text-secondary hover:text-primary transition-colors">
                 <Icon name="Instagram" size={20} />
               </a>
-              <a href="#" className="text-slate-400 hover:text-primary transition-colors">
+              <a href="#" className="text-secondary hover:text-primary transition-colors">
                 <Icon name="MessageCircle" size={20} />
               </a>
             </div>
