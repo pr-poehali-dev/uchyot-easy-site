@@ -65,7 +65,7 @@ const Index = () => {
             <a href="#process" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Как мы работаем</a>
             <a href="#templates" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Шаблоны</a>
             <a href="#cases" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Кейсы</a>
-            <a href="#about" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">О нас</a>
+            <a href="#about" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Почему Мы</a>
             <a href="#contact" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Контакты</a>
           </nav>
           <div className="flex items-center gap-3">
@@ -87,7 +87,7 @@ const Index = () => {
             <a href="#process" className="text-2xl font-medium text-foreground hover:text-primary transition-colors">Как мы работаем</a>
             <a href="#templates" className="text-2xl font-medium text-foreground hover:text-primary transition-colors">Шаблоны</a>
             <a href="#cases" className="text-2xl font-medium text-foreground hover:text-primary transition-colors">Кейсы</a>
-            <a href="#about" className="text-2xl font-medium text-foreground hover:text-primary transition-colors">О нас</a>
+            <a href="#about" className="text-2xl font-medium text-foreground hover:text-primary transition-colors">Почему Мы</a>
             <a href="#contact" className="text-2xl font-medium text-foreground hover:text-primary transition-colors">Контакты</a>
             <Button className="bg-primary hover:bg-primary/90 text-primary-foreground mt-4 px-8 py-6 text-lg">Заявка</Button>
           </nav>
@@ -283,26 +283,72 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="about" className="py-20 bg-background opacity-0">
+      <section id="about" className="py-20 bg-background opacity-0 relative overflow-hidden">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 tracking-tight">
-              О НАС
-            </h2>
-            <p className="text-lg text-foreground/70 mb-8">
-              Мы — команда специалистов по автоматизации бизнес-процессов. Наша миссия — делать учет простым и понятным для любого бизнеса.
-            </p>
-            <div className="grid md:grid-cols-3 gap-8 mt-12">
-              {[
-                { number: '150+', label: 'Реализованных проектов' },
-                { number: '5 лет', label: 'На рынке автоматизации' },
-                { number: '98%', label: 'Довольных клиентов' }
-              ].map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-5xl font-bold text-primary mb-2">{stat.number}</div>
-                  <div className="text-foreground/70">{stat.label}</div>
+          <div className="max-w-7xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-12 items-center">
+              <div className="md:col-span-2">
+                <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 tracking-tight">
+                  ПОЧЕМУ МЫ
+                </h2>
+                <p className="text-lg text-foreground/70 mb-8">
+                  Агентство «Учет легко» основано с миссией делать автоматизацию бизнес-процессов простой и понятной для каждого предпринимателя. Мы создаем решения, которые экономят ваше время и деньги.
+                </p>
+                <div className="space-y-6 mb-12">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Icon name="Target" className="text-primary" size={20} />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-foreground mb-2">Индивидуальный подход</h3>
+                      <p className="text-foreground/70">Разрабатываем решения под ваши задачи, а не подгоняем бизнес под стандартные шаблоны</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Icon name="Clock" className="text-primary" size={20} />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-foreground mb-2">Быстрое внедрение</h3>
+                      <p className="text-foreground/70">От идеи до запуска — всего несколько дней. Минимум бюрократии, максимум результата</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Icon name="Shield" className="text-primary" size={20} />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-foreground mb-2">Надежная поддержка</h3>
+                      <p className="text-foreground/70">Всегда на связи после запуска. Помогаем, обучаем, развиваем ваши системы</p>
+                    </div>
+                  </div>
                 </div>
-              ))}
+                <div className="grid grid-cols-3 gap-6">
+                  {[
+                    { number: '150+', label: 'Реализованных проектов' },
+                    { number: '5 лет', label: 'На рынке автоматизации' },
+                    { number: '98%', label: 'Довольных клиентов' }
+                  ].map((stat, index) => (
+                    <div key={index} className="text-center">
+                      <div className="text-4xl font-bold text-primary mb-2">{stat.number}</div>
+                      <div className="text-sm text-foreground/70">{stat.label}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="md:col-span-1 flex justify-end">
+                <div className="relative w-full max-w-sm">
+                  <img 
+                    src="https://cdn.poehali.dev/files/9b6a4782-8ae4-4cdb-901a-7b4cf7dab22e.jpg" 
+                    alt="Основатель агентства Учет легко" 
+                    className="w-full h-auto rounded-2xl shadow-2xl object-cover"
+                  />
+                  <div className="absolute bottom-6 left-6 right-6 bg-background/95 backdrop-blur-sm rounded-lg p-4 border border-border">
+                    <p className="font-semibold text-foreground mb-1">Карина Ровкова</p>
+                    <p className="text-sm text-foreground/70">Основатель «Учет легко»</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
