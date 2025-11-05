@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -8,6 +8,44 @@ import Icon from '@/components/ui/icon';
 
 const Index = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+
+  useEffect(() => {
+    // Плавная прокрутка при клике на якорные ссылки
+    const handleSmoothScroll = (e: MouseEvent) => {
+      const target = e.target as HTMLAnchorElement;
+      if (target.tagName === 'A' && target.hash) {
+        e.preventDefault();
+        const element = document.querySelector(target.hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    };
+
+    // Анимация появления блоков при скролле
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in-up');
+        }
+      });
+    }, observerOptions);
+
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => observer.observe(section));
+
+    document.addEventListener('click', handleSmoothScroll);
+
+    return () => {
+      document.removeEventListener('click', handleSmoothScroll);
+      observer.disconnect();
+    };
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -32,7 +70,7 @@ const Index = () => {
         </div>
       </header>
 
-      <section className="pt-32 pb-20 bg-background">
+      <section className="pt-32 pb-20 bg-background opacity-0" style={{ animation: 'fadeInUp 0.6s ease-out forwards' }}>
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
             <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 tracking-tight">
@@ -50,7 +88,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="process" className="py-20 bg-[#1e1e1e]">
+      <section id="process" className="py-20 bg-[#1e1e1e] opacity-0">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-background text-center mb-4 tracking-tight">
             КАК МЫ РАБОТАЕМ
@@ -122,7 +160,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="templates" className="py-20 bg-background">
+      <section id="templates" className="py-20 bg-background opacity-0">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground text-center mb-4 tracking-tight">
             ГОТОВЫЕ ШАБЛОНЫ
@@ -172,7 +210,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="cases" className="py-20 bg-[#1e1e1e]">
+      <section id="cases" className="py-20 bg-[#1e1e1e] opacity-0">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-background text-center mb-4 tracking-tight">
             НАШИ КЕЙСЫ
@@ -221,7 +259,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="about" className="py-20 bg-background">
+      <section id="about" className="py-20 bg-background opacity-0">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 tracking-tight">
@@ -297,7 +335,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-background opacity-0">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground text-center mb-4 tracking-tight">
@@ -342,7 +380,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="contact" className="py-20 bg-[#1e1e1e]">
+      <section id="contact" className="py-20 bg-[#1e1e1e] opacity-0">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold text-background text-center mb-4 tracking-tight">
