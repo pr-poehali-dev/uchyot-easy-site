@@ -124,38 +124,38 @@ const Index = () => {
             {[
               {
                 step: '01',
-                title: 'Отправка задачи',
-                description: 'Вы отправляете задачу — мы даем предварительную оценку сроков и стоимости'
+                title: 'Описание задачи',
+                description: 'Вы отправляете краткое описание задачи — чтобы понять суть'
               },
               {
                 step: '02',
-                title: 'Созвон и анализ',
-                description: 'Проводим созвон и погружаемся в бизнес-процессы вашей компании'
+                title: 'Быстрая оценка',
+                description: 'Мы быстро оцениваем примерную стоимость и сроки'
               },
               {
                 step: '03',
-                title: 'Составление ТЗ',
-                description: 'Составляем и согласовываем техническое задание с учетом всех требований'
+                title: 'Созвон',
+                description: 'Созваниваемся, обсуждаем детали и ваши бизнес-процессы'
               },
               {
                 step: '04',
-                title: 'Оценка и оплата',
-                description: 'Озвучиваем точную стоимость и сроки, получаем оплату'
+                title: 'Техническое задание',
+                description: 'Готовим точное ТЗ с финальной стоимостью и сроками'
               },
               {
                 step: '05',
-                title: 'Разработка',
-                description: 'Создаем систему учета и передаем проект с видеоинструкцией'
+                title: 'Предоплата и старт',
+                description: 'Получаем предоплату и запускаем процесс разработки'
               },
               {
                 step: '06',
-                title: 'Тестовый период',
-                description: '1-4 недели поддержки и корректировки системы под ваши задачи'
+                title: 'Готовая таблица',
+                description: 'Отправляем готовую таблицу с видеоинструкцией по внедрению'
               },
               {
                 step: '07',
-                title: 'Завершение',
-                description: 'Официальное завершение с гарантией исправления ошибок'
+                title: 'Тестовый период',
+                description: 'В течение 1–4 недель поддерживаем вас, вносим правки'
               }
             ].map((item, index) => (
               <Card key={index} className="bg-[#2d2d2d] border-muted hover:border-primary transition-all duration-300 animate-slide-in-left" style={{ animationDelay: `${index * 100}ms` }}>
@@ -175,9 +175,9 @@ const Index = () => {
           <div className="mt-16 max-w-4xl mx-auto">
             <Card className="bg-[#2d2d2d] border-primary">
               <CardHeader>
-                <CardTitle className="text-background text-center">Официальная работа с гарантиями</CardTitle>
+                <CardTitle className="text-background text-center">Всегда на связи</CardTitle>
                 <CardDescription className="text-secondary text-center">
-                  Работаем по договору, принимаем любые формы оплаты, гарантируем исправление ошибок
+                  По окончании теста сотрудничество можно завершить — но мы всегда на связи, если понадобится помощь или доработка
                 </CardDescription>
               </CardHeader>
             </Card>
