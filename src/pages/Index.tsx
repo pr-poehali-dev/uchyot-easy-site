@@ -58,8 +58,9 @@ const Index = () => {
     <div className="min-h-screen">
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm border-b border-border">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="flex items-center gap-3">
-            <img src="https://cdn.poehali.dev/files/f559d442-330a-4d21-b8e5-8a40f00d66ac.jpg" alt="Учёт легко" className="h-12 object-contain" />
+          <div className="flex items-center gap-2">
+            <Icon name="TrendingUp" className="text-primary" size={28} />
+            <span className="text-xl font-bold text-primary">учёт легко!</span>
           </div>
           <nav className="hidden md:flex gap-6">
             <a href="#process" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Как мы работаем</a>
