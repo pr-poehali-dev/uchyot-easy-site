@@ -343,9 +343,9 @@ const Index = () => {
                     alt="Основатель агентства Учет легко" 
                     className="w-full h-auto rounded-2xl shadow-2xl object-cover"
                   />
-                  <div className="absolute bottom-6 left-6 right-6 bg-background/95 backdrop-blur-sm rounded-lg p-4 border border-border">
-                    <p className="font-semibold text-foreground mb-1">Карина Ровкова</p>
-                    <p className="text-sm text-foreground/70">Основатель «Учет легко»</p>
+                  <div className="absolute bottom-6 left-6 right-6 bg-background/95 backdrop-blur-sm rounded-lg p-3 border border-border">
+                    <p className="font-semibold text-foreground text-sm mb-0.5">Анастасия Егорова</p>
+                    <p className="text-xs text-foreground/70">Основатель «Учет&nbsp;легко»</p>
                   </div>
                 </div>
               </div>
