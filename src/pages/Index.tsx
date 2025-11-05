@@ -456,7 +456,23 @@ const Index = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-background text-center mb-4 tracking-tight">
               СВЯЗАТЬСЯ С НАМИ
             </h2>
-            <p className="text-secondary text-center mb-12 text-lg">Оставьте заявку и мы свяжемся с вами в течение часа</p>
+            <p className="text-secondary text-center mb-8 text-lg">Оставьте заявку и мы свяжемся с вами в течение часа</p>
+            
+            <div className="flex justify-center mb-8">
+              <a 
+                href="https://t.me/nastya_egorova" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 bg-[#0088cc] hover:bg-[#0088cc]/90 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all shadow-lg hover:shadow-xl"
+              >
+                <Icon name="Send" size={24} />
+                Написать в Telegram
+              </a>
+            </div>
+
+            <div className="text-center mb-8">
+              <p className="text-secondary">или заполните форму ниже</p>
+            </div>
             
             <Card className="bg-[#2d2d2d] border-muted">
               <CardContent className="pt-6">
