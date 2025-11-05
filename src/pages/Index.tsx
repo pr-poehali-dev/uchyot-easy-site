@@ -8,6 +8,7 @@ import Icon from '@/components/ui/icon';
 
 const Index = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     // Плавная прокрутка при клике на якорные ссылки
@@ -18,6 +19,7 @@ const Index = () => {
         const element = document.querySelector(target.hash);
         if (element) {
           element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          setIsMobileMenuOpen(false);
         }
       }
     };
@@ -66,9 +68,31 @@ const Index = () => {
             <a href="#about" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">О нас</a>
             <a href="#contact" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Контакты</a>
           </nav>
-          <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">Заявка</Button>
+          <div className="flex items-center gap-3">
+            <Button className="hidden md:block bg-primary hover:bg-primary/90 text-primary-foreground">Заявка</Button>
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="md:hidden p-2 text-foreground hover:text-primary transition-colors"
+              aria-label="Toggle menu"
+            >
+              <Icon name={isMobileMenuOpen ? "X" : "Menu"} size={24} />
+            </button>
+          </div>
         </div>
       </header>
+
+      {isMobileMenuOpen && (
+        <div className="fixed inset-0 z-40 bg-background/95 backdrop-blur-sm md:hidden">
+          <nav className="flex flex-col items-center justify-center h-full gap-8">
+            <a href="#process" className="text-2xl font-medium text-foreground hover:text-primary transition-colors">Как мы работаем</a>
+            <a href="#templates" className="text-2xl font-medium text-foreground hover:text-primary transition-colors">Шаблоны</a>
+            <a href="#cases" className="text-2xl font-medium text-foreground hover:text-primary transition-colors">Кейсы</a>
+            <a href="#about" className="text-2xl font-medium text-foreground hover:text-primary transition-colors">О нас</a>
+            <a href="#contact" className="text-2xl font-medium text-foreground hover:text-primary transition-colors">Контакты</a>
+            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground mt-4 px-8 py-6 text-lg">Заявка</Button>
+          </nav>
+        </div>
+      )}
 
       <section className="pt-32 pb-20 bg-background opacity-0" style={{ animation: 'fadeInUp 0.6s ease-out forwards' }}>
         <div className="container mx-auto px-4">
