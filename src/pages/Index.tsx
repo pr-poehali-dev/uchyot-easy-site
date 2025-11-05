@@ -1,12 +1,427 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import Icon from '@/components/ui/icon';
 
 const Index = () => {
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Form submitted:', formData);
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4 color-black text-black">Добро пожаловать!</h1>
-        <p className="text-xl text-gray-600">тут будет отображаться ваш проект</p>
-      </div>
+    <div className="min-h-screen">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-slate-50/90 backdrop-blur-sm border-b border-slate-200">
+        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+          <div className="flex items-center gap-2">
+            <Icon name="FileSpreadsheet" className="text-primary" size={28} />
+            <span className="text-xl font-bold text-slate-900">УЧЁТ ЛЕГКО!</span>
+          </div>
+          <nav className="hidden md:flex gap-6">
+            <a href="#process" className="text-sm font-medium text-slate-700 hover:text-primary transition-colors">Как мы работаем</a>
+            <a href="#templates" className="text-sm font-medium text-slate-700 hover:text-primary transition-colors">Шаблоны</a>
+            <a href="#cases" className="text-sm font-medium text-slate-700 hover:text-primary transition-colors">Кейсы</a>
+            <a href="#about" className="text-sm font-medium text-slate-700 hover:text-primary transition-colors">О нас</a>
+            <a href="#contact" className="text-sm font-medium text-slate-700 hover:text-primary transition-colors">Контакты</a>
+          </nav>
+          <Button className="bg-primary hover:bg-secondary">Заявка</Button>
+        </div>
+      </header>
+
+      <section className="pt-32 pb-20 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center animate-fade-in">
+            <h1 className="text-5xl md:text-7xl font-bold text-slate-900 mb-6 tracking-tight">
+              АВТОМАТИЗАЦИЯ УЧЕТА<br />
+              <span className="text-primary">ЛЕГКО!</span>
+            </h1>
+            <p className="text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
+              Разрабатываем системы учета в Google-таблицах и автоматизируем отчетность для вашего бизнеса
+            </p>
+            <Button size="lg" className="bg-primary hover:bg-secondary text-white px-8 py-6 text-lg">
+              Получить консультацию
+              <Icon name="ArrowRight" className="ml-2" size={20} />
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <section id="process" className="py-20 bg-slate-900">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-4 tracking-tight">
+            КАК МЫ РАБОТАЕМ
+          </h2>
+          <p className="text-slate-400 text-center mb-16 text-lg">Простой и прозрачный процесс от заявки до результата</p>
+          
+          <div className="max-w-4xl mx-auto grid gap-6">
+            {[
+              {
+                step: '01',
+                title: 'Отправка задачи',
+                description: 'Вы отправляете задачу — мы даем предварительную оценку сроков и стоимости'
+              },
+              {
+                step: '02',
+                title: 'Созвон и анализ',
+                description: 'Проводим созвон и погружаемся в бизнес-процессы вашей компании'
+              },
+              {
+                step: '03',
+                title: 'Составление ТЗ',
+                description: 'Составляем и согласовываем техническое задание с учетом всех требований'
+              },
+              {
+                step: '04',
+                title: 'Оценка и оплата',
+                description: 'Озвучиваем точную стоимость и сроки, получаем оплату'
+              },
+              {
+                step: '05',
+                title: 'Разработка',
+                description: 'Создаем систему учета и передаем проект с видеоинструкцией'
+              },
+              {
+                step: '06',
+                title: 'Тестовый период',
+                description: '1-4 недели поддержки и корректировки системы под ваши задачи'
+              },
+              {
+                step: '07',
+                title: 'Завершение',
+                description: 'Официальное завершение с гарантией исправления ошибок'
+              }
+            ].map((item, index) => (
+              <Card key={index} className="bg-slate-800 border-slate-700 hover:border-primary transition-all duration-300 animate-slide-in-left" style={{ animationDelay: `${index * 100}ms` }}>
+                <CardHeader>
+                  <div className="flex items-start gap-4">
+                    <span className="text-5xl font-bold text-primary/20">{item.step}</span>
+                    <div>
+                      <CardTitle className="text-white text-xl mb-2">{item.title}</CardTitle>
+                      <CardDescription className="text-slate-400">{item.description}</CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
+              </Card>
+            ))}
+          </div>
+
+          <div className="mt-16 max-w-4xl mx-auto">
+            <Card className="bg-slate-800 border-primary">
+              <CardHeader>
+                <CardTitle className="text-white text-center">Официальная работа с гарантиями</CardTitle>
+                <CardDescription className="text-slate-400 text-center">
+                  Работаем по договору, принимаем любые формы оплаты, гарантируем исправление ошибок
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <section id="templates" className="py-20 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 text-center mb-4 tracking-tight">
+            ГОТОВЫЕ ШАБЛОНЫ
+          </h2>
+          <p className="text-slate-600 text-center mb-16 text-lg">Универсальные решения для управленческого учета</p>
+          
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {[
+              {
+                icon: 'TrendingUp',
+                title: 'Финансовый учет',
+                description: 'Полный контроль доходов, расходов и прибыли вашего бизнеса',
+                price: '15 000 ₽'
+              },
+              {
+                icon: 'Users',
+                title: 'CRM-система',
+                description: 'Управление клиентами и сделками в удобной таблице',
+                price: '12 000 ₽'
+              },
+              {
+                icon: 'Package',
+                title: 'Складской учет',
+                description: 'Контроль остатков, приход и расход товаров',
+                price: '18 000 ₽'
+              }
+            ].map((template, index) => (
+              <Card key={index} className="hover:shadow-xl transition-shadow duration-300 animate-scale-in" style={{ animationDelay: `${index * 150}ms` }}>
+                <CardHeader>
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                    <Icon name={template.icon as any} className="text-primary" size={24} />
+                  </div>
+                  <CardTitle className="text-xl mb-2">{template.title}</CardTitle>
+                  <CardDescription>{template.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex items-center justify-between">
+                    <span className="text-2xl font-bold text-primary">{template.price}</span>
+                    <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">
+                      Купить
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="cases" className="py-20 bg-slate-900">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-4 tracking-tight">
+            НАШИ КЕЙСЫ
+          </h2>
+          <p className="text-slate-400 text-center mb-16 text-lg">Реализованные проекты автоматизации</p>
+          
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {[
+              {
+                title: 'Автоматизация учета для IT-компании',
+                description: 'Разработали систему учета проектов, времени и финансов для команды из 50 человек',
+                metrics: ['Экономия 15 часов в неделю', 'Снижение ошибок на 80%']
+              },
+              {
+                title: 'CRM для онлайн-школы',
+                description: 'Создали систему управления студентами, курсами и платежами с автоматической отчетностью',
+                metrics: ['5000+ студентов в базе', 'Автоотчеты каждый день']
+              },
+              {
+                title: 'Складской учет для ритейла',
+                description: 'Внедрили учет товаров по 12 магазинам с автоматическим формированием заказов',
+                metrics: ['12 точек продаж', '3000+ товарных позиций']
+              },
+              {
+                title: 'Финансовый дашборд для фонда',
+                description: 'Разработали систему консолидации финансов с визуализацией ключевых показателей',
+                metrics: ['20+ источников данных', 'Обновление в реальном времени']
+              }
+            ].map((caseItem, index) => (
+              <Card key={index} className="bg-slate-800 border-slate-700 hover:border-primary transition-colors duration-300">
+                <CardHeader>
+                  <CardTitle className="text-white text-xl mb-3">{caseItem.title}</CardTitle>
+                  <CardDescription className="text-slate-400 mb-4">{caseItem.description}</CardDescription>
+                  <div className="flex flex-wrap gap-2">
+                    {caseItem.metrics.map((metric, i) => (
+                      <span key={i} className="inline-flex items-center gap-1 text-sm text-primary bg-primary/10 px-3 py-1 rounded-full">
+                        <Icon name="Check" size={14} />
+                        {metric}
+                      </span>
+                    ))}
+                  </div>
+                </CardHeader>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="about" className="py-20 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
+              О НАС
+            </h2>
+            <p className="text-lg text-slate-600 mb-8">
+              Мы — команда специалистов по автоматизации бизнес-процессов. Наша миссия — делать учет простым и понятным для любого бизнеса.
+            </p>
+            <div className="grid md:grid-cols-3 gap-8 mt-12">
+              {[
+                { number: '150+', label: 'Реализованных проектов' },
+                { number: '5 лет', label: 'На рынке автоматизации' },
+                { number: '98%', label: 'Довольных клиентов' }
+              ].map((stat, index) => (
+                <div key={index} className="text-center">
+                  <div className="text-5xl font-bold text-primary mb-2">{stat.number}</div>
+                  <div className="text-slate-600">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-slate-900">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-4 tracking-tight">
+              ОТЗЫВЫ
+            </h2>
+            <p className="text-slate-400 text-center mb-16 text-lg">Что говорят наши клиенты</p>
+            
+            <div className="grid md:grid-cols-2 gap-6">
+              {[
+                {
+                  name: 'Александр М.',
+                  role: 'Директор IT-компании',
+                  text: 'Отличная работа! Автоматизировали весь учет проектов. Теперь все данные в одном месте, отчеты формируются автоматически.'
+                },
+                {
+                  name: 'Мария К.',
+                  role: 'Владелица онлайн-школы',
+                  text: 'Система CRM превзошла ожидания. Простая, понятная, все работает как часы. Команда всегда на связи и помогает.'
+                },
+                {
+                  name: 'Дмитрий П.',
+                  role: 'Руководитель сети магазинов',
+                  text: 'Складской учет теперь не занимает часы работы. Все автоматизировано, ошибок стало в разы меньше. Рекомендую!'
+                },
+                {
+                  name: 'Елена С.',
+                  role: 'Финансовый директор',
+                  text: 'Профессиональный подход на всех этапах. Система учета полностью закрыла наши потребности. Благодарим за качество!'
+                }
+              ].map((review, index) => (
+                <Card key={index} className="bg-slate-800 border-slate-700">
+                  <CardHeader>
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-xl">
+                        {review.name[0]}
+                      </div>
+                      <div className="flex-1">
+                        <CardTitle className="text-white text-lg mb-1">{review.name}</CardTitle>
+                        <CardDescription className="text-slate-400 text-sm mb-3">{review.role}</CardDescription>
+                        <p className="text-slate-300">{review.text}</p>
+                      </div>
+                    </div>
+                  </CardHeader>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 text-center mb-4 tracking-tight">
+              FAQ
+            </h2>
+            <p className="text-slate-600 text-center mb-16 text-lg">Часто задаваемые вопросы</p>
+            
+            <Accordion type="single" collapsible className="space-y-4">
+              {[
+                {
+                  question: 'Сколько времени занимает разработка?',
+                  answer: 'Срок зависит от сложности проекта. Простые шаблоны — 3-5 дней, индивидуальные решения — от 1 до 4 недель.'
+                },
+                {
+                  question: 'Нужны ли специальные знания для работы с системой?',
+                  answer: 'Нет, все системы разрабатываются максимально просто. Мы предоставляем видеоинструкции и поддержку в период адаптации.'
+                },
+                {
+                  question: 'Можно ли доработать систему в будущем?',
+                  answer: 'Да, мы всегда готовы к сотрудничеству. Можем добавить новые функции или модифицировать существующие.'
+                },
+                {
+                  question: 'Какие гарантии вы предоставляете?',
+                  answer: 'Работаем официально по договору. Гарантируем исправление всех ошибок и корректную работу системы.'
+                },
+                {
+                  question: 'Как происходит оплата?',
+                  answer: 'Принимаем оплату любым удобным способом: на карту, по счету для ИП и ООО, через электронные платежные системы.'
+                }
+              ].map((item, index) => (
+                <AccordionItem key={index} value={`item-${index}`} className="border border-slate-200 rounded-lg px-6 bg-white">
+                  <AccordionTrigger className="text-left text-slate-900 font-medium hover:text-primary">
+                    {item.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-slate-600">
+                    {item.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="py-20 bg-slate-900">
+        <div className="container mx-auto px-4">
+          <div className="max-w-2xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-4 tracking-tight">
+              СВЯЗАТЬСЯ С НАМИ
+            </h2>
+            <p className="text-slate-400 text-center mb-12 text-lg">Оставьте заявку и мы свяжемся с вами в течение часа</p>
+            
+            <Card className="bg-slate-800 border-slate-700">
+              <CardContent className="pt-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div>
+                    <label className="text-white mb-2 block">Ваше имя</label>
+                    <Input 
+                      placeholder="Иван Иванов"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
+                    />
+                  </div>
+                  <div>
+                    <label className="text-white mb-2 block">Email или телефон</label>
+                    <Input 
+                      placeholder="ivan@example.com"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
+                    />
+                  </div>
+                  <div>
+                    <label className="text-white mb-2 block">Ваша задача</label>
+                    <Textarea 
+                      placeholder="Расскажите о задаче, которую хотите автоматизировать"
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400 min-h-32"
+                    />
+                  </div>
+                  <Button type="submit" className="w-full bg-primary hover:bg-secondary text-white py-6 text-lg">
+                    Отправить заявку
+                    <Icon name="Send" className="ml-2" size={20} />
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+
+            <div className="mt-12 flex justify-center gap-6">
+              <a href="tel:+79999999999" className="flex items-center gap-2 text-slate-400 hover:text-primary transition-colors">
+                <Icon name="Phone" size={20} />
+                <span>+7 (999) 999-99-99</span>
+              </a>
+              <a href="mailto:info@uchet-legko.ru" className="flex items-center gap-2 text-slate-400 hover:text-primary transition-colors">
+                <Icon name="Mail" size={20} />
+                <span>info@uchet-legko.ru</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer className="py-8 bg-slate-950 border-t border-slate-800">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="flex items-center gap-2">
+              <Icon name="FileSpreadsheet" className="text-primary" size={24} />
+              <span className="font-bold text-white">УЧЁТ ЛЕГКО!</span>
+            </div>
+            <p className="text-slate-400 text-sm">© 2024 Учёт Легко. Все права защищены.</p>
+            <div className="flex gap-4">
+              <a href="#" className="text-slate-400 hover:text-primary transition-colors">
+                <Icon name="Instagram" size={20} />
+              </a>
+              <a href="#" className="text-slate-400 hover:text-primary transition-colors">
+                <Icon name="MessageCircle" size={20} />
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
