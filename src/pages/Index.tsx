@@ -18,9 +18,8 @@ const Index = () => {
     <div className="min-h-screen">
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm border-b border-border">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <Icon name="FileSpreadsheet" className="text-primary" size={28} />
-            <span className="text-xl font-bold text-foreground">УЧЁТ ЛЕГКО!</span>
+          <div className="flex items-center gap-3">
+            <img src="https://cdn.poehali.dev/files/f559d442-330a-4d21-b8e5-8a40f00d66ac.jpg" alt="Учёт легко" className="h-10" />
           </div>
           <nav className="hidden md:flex gap-6">
             <a href="#process" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Как мы работаем</a>
@@ -406,9 +405,8 @@ const Index = () => {
       <footer className="py-8 bg-[#0d0d0d] border-t border-muted">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex items-center gap-2">
-              <Icon name="FileSpreadsheet" className="text-primary" size={24} />
-              <span className="font-bold text-background">УЧЁТ ЛЕГКО!</span>
+            <div className="flex items-center gap-3">
+              <img src="https://cdn.poehali.dev/files/f559d442-330a-4d21-b8e5-8a40f00d66ac.jpg" alt="Учёт легко" className="h-8" />
             </div>
             <p className="text-secondary text-sm">© 2024 Учёт Легко. Все права защищены.</p>
             <div className="flex gap-4">
