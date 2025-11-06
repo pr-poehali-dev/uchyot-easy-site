@@ -4,7 +4,7 @@ export const AboutSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-[300px_1fr] gap-12 items-center">
-            <div className="relative">
+            <div className="relative animate-fade-in">
               <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                 <img 
                   src="https://cdn.poehali.dev/files/952ac81f-783e-4a71-9b00-472e0686c9a2.jpg" 
@@ -18,7 +18,7 @@ export const AboutSection = () => {
               </div>
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-6 animate-fade-in" style={{ animationDelay: '200ms' }}>
               <h2 className="text-4xl md:text-5xl font-bold text-foreground tracking-tight leading-tight">
                 ОТЧЁТЫ, КОТОРЫЕ НЕ БЕСЯТ
               </h2>
