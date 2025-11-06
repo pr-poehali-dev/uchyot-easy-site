@@ -7,7 +7,7 @@ export const ProcessSection = () => {
         <h2 className="text-4xl md:text-5xl font-bold text-background text-center mb-4 tracking-tight">
           КАК МЫ РАБОТАЕМ
         </h2>
-        <p className="text-secondary text-center mb-16 text-lg">Простой и прозрачный процесс от заявки до результата</p>
+        <p className="text-secondary text-center mb-16 text-lg">Понятные этапы сотрудничества от задачи до готового решения</p>
         
         <div className="max-w-4xl mx-auto grid gap-6">
           {[
@@ -29,7 +29,7 @@ export const ProcessSection = () => {
             {
               step: '04',
               title: 'Техническое задание',
-              description: 'Готовим точное ТЗ с финальной стоимостью и сроками'
+              description: 'Готовим ТЗ с финальной стоимостью и сроками'
             },
             {
               step: '05',
@@ -39,12 +39,12 @@ export const ProcessSection = () => {
             {
               step: '06',
               title: 'Готовая таблица',
-              description: 'Отправляем готовую таблицу с видеоинструкцией по внедрению'
+              description: 'Отправляем готовую таблицу с видеоинструкцией по внедрению и использованию'
             },
             {
               step: '07',
               title: 'Тестовый период',
-              description: 'В течение 1–4 недель поддерживаем вас, вносим правки'
+              description: 'Тестовый период от 1 до 4 недель, в течение которого мы остаемся с вами на связи и отвечаем на вопросы. При необходимости вносим правки по вашим замечаниям в рамках ТЗ'
             }
           ].map((item, index) => (
             <Card key={index} className="bg-[#2d2d2d] border-muted hover:border-primary transition-all duration-300 animate-slide-in-left" style={{ animationDelay: `${index * 100}ms` }}>
@@ -66,7 +66,7 @@ export const ProcessSection = () => {
             <CardHeader>
               <CardTitle className="text-background text-center">Всегда на связи</CardTitle>
               <CardDescription className="text-secondary text-center">
-                По окончании теста сотрудничество можно завершить — но мы всегда на связи, если понадобится помощь или доработка
+                По истечении тестового периода наше сотрудничество считается завершённым. Но вы всегда можете обратиться к нам за новым проектом
               </CardDescription>
             </CardHeader>
           </Card>

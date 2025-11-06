@@ -7,8 +7,14 @@ export const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <Icon name="TrendingUp" className="text-primary" size={24} />
-              <span className="text-lg font-bold text-background">учёт легко!</span>
+              <svg className="text-primary" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <rect x="3" y="13" width="4" height="8" />
+                <rect x="10" y="9" width="4" height="12" />
+                <rect x="17" y="5" width="4" height="16" />
+                <path d="M5 3l14 14" strokeLinecap="round" />
+                <path d="M19 3l-3 3" strokeLinecap="round" />
+              </svg>
+              <span className="text-lg font-bold text-background uppercase">Учёт Легко!</span>
             </div>
             <p className="text-secondary text-sm">
               Автоматизация учета и отчетности для вашего бизнеса

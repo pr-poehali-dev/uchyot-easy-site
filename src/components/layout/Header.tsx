@@ -10,8 +10,14 @@ export const Header = () => {
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm border-b border-border">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center gap-2">
-            <Icon name="TrendingUp" className="text-primary" size={28} />
-            <span className="text-xl font-bold text-primary">учёт легко!</span>
+            <svg className="text-primary" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <rect x="3" y="13" width="4" height="8" />
+              <rect x="10" y="9" width="4" height="12" />
+              <rect x="17" y="5" width="4" height="16" />
+              <path d="M5 3l14 14" strokeLinecap="round" />
+              <path d="M19 3l-3 3" strokeLinecap="round" />
+            </svg>
+            <span className="text-xl font-bold text-primary uppercase">Учёт Легко!</span>
           </div>
           <nav className="hidden md:flex gap-6">
             <a href="#process" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Как мы работаем</a>
