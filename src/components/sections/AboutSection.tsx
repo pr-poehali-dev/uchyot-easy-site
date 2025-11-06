@@ -1,50 +1,40 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import Icon from '@/components/ui/icon';
-
 export const AboutSection = () => {
   return (
     <section id="about" className="py-20 bg-background opacity-0">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl md:text-5xl font-bold text-foreground text-center mb-4 tracking-tight">
-          ПОЧЕМУ МЫ
-        </h2>
-        <p className="text-foreground/70 text-center mb-16 text-lg">Преимущества работы с нами</p>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-          {[
-            {
-              icon: 'Zap',
-              title: 'Быстро',
-              description: 'Готовые шаблоны позволяют запустить проект за 1-2 недели'
-            },
-            {
-              icon: 'Sparkles',
-              title: 'Гибко',
-              description: 'Адаптируем систему под ваши уникальные бизнес-процессы'
-            },
-            {
-              icon: 'Shield',
-              title: 'Надежно',
-              description: 'Работаем по договору с гарантией исправления ошибок'
-            },
-            {
-              icon: 'HeartHandshake',
-              title: 'С поддержкой',
-              description: 'Тестовый период и консультации даже после завершения'
-            }
-          ].map((item, index) => (
-            <Card key={index} className="bg-card border-border hover:border-primary transition-all duration-300 animate-scale-in" style={{ animationDelay: `${index * 100}ms` }}>
-              <CardHeader className="text-center">
-                <div className="mx-auto mb-4 p-4 bg-primary/10 rounded-full w-fit">
-                  <Icon name={item.icon as any} className="text-primary" size={32} />
+        <div className="max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-[300px_1fr] gap-12 items-center">
+            <div className="relative">
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+                <img 
+                  src="https://cdn.poehali.dev/files/952ac81f-783e-4a71-9b00-472e0686c9a2.jpg" 
+                  alt="Егорова Анастасия - бизнес-аналитик" 
+                  className="w-full h-[400px] object-cover object-top"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                  <p className="text-background font-bold text-lg">Егорова Анастасия</p>
+                  <p className="text-background/90 text-sm">Бизнес-аналитик</p>
                 </div>
-                <CardTitle className="text-foreground text-lg">{item.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-center text-sm text-foreground/70">{item.description}</p>
-              </CardContent>
-            </Card>
-          ))}
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground tracking-tight leading-tight">
+                ОТЧЁТЫ, КОТОРЫЕ НЕ БЕСЯТ
+              </h2>
+              <div className="space-y-4 text-lg text-foreground/80 leading-relaxed">
+                <p className="font-medium text-xl text-foreground">
+                  Информативно. Стильно. Понятно с первого взгляда.
+                </p>
+                <p>
+                  Пока фрилансеры штампуют унылые таблицы, мы делаем инструменты, с которыми приятно работать.
+                </p>
+                <p className="text-primary font-semibold">
+                  Данные для принятия решений, которые считываются за секунды, а не часы — результат, за который нас выбирают и возвращаются снова.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
